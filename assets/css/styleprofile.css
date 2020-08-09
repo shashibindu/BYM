@@ -1,0 +1,14 @@
+.profile-box{
+    color: white;
+    border-radius: 50px;
+    width: 50vw;
+    background-color:orangered;
+    padding: 5vh;
+    border: 3px solid;
+    box-shadow: 5px 10px rgb(209, 160, 70);
+
+}
+
+#pro-pic{
+    border-radius: 100%;
+}

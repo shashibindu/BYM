@@ -1,0 +1,33 @@
+.login-box{
+    color: white;
+}
+
+.login-form{
+    border-radius: 50px;
+    width: 50vw;
+    background-color:orangered;
+    padding: 5vh;
+    border: 3px solid;
+    box-shadow: 5px 10px rgb(209, 160, 70);
+}
+
+input[type=text] {
+    border: 3px solid darkblue;
+    border-radius: 4px;
+    width: 25vw;
+    height: 5vh;; 
+}
+
+input[type=password] {
+    border: 3px solid darkblue;
+    border-radius: 4px;
+    width: 25vw;
+    height: 5vh; 
+}
+
+input[type=button]{
+    background-color: greenyellow;
+    width: 12.5vw;
+    height: 5vh;  
+    border: 3px solid brown;
+}

@@ -1,0 +1,50 @@
+button{
+    border-radius: 10%;
+    width: 256px;
+    height: 300px;    
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.card_img{
+    border-radius: 10%;
+    width: 256px;
+    height: 300px;    
+    border: none;
+    outline: none;
+}
+
+.open_card{
+    color: white;
+    text-align: center;
+    font-size: 32px;
+    display: none;
+  position: fixed;
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 30vw;
+  overflow: auto;
+  margin: 0 35vw;
+}
+
+.card_details{
+    background-color: yellowgreen;
+}
+
+.close{
+    background-color: darkgreen;
+    border-radius: 100%;    
+    float: right;
+    color: grey;
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus{
+    background-color: greenyellow;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}

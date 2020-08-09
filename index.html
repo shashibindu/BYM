@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BookYrMovie</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="a school project by phani">
+    <meta name="keywords" content="phanni, project, html, css, js">
+    <meta name="author" content="The Helper Boy">
+    <link rel="shortcut icon" href="assets/imgs/logo_ico.ico" type="image/x-icon" sizes="16x16 24x24 32x32 48x48 64x64 96x96 128x128 192x192 256x256" />
+
+    <!-- datasets -->
+    <script type="text/javascript" src="assets/database/users_data.js"></script>
+    <script type="text/javascript" src="assets/database/tickets_data.js"></script>
+
+    <!-- login -->
+    <link rel="stylesheet" href="assets/css/stylelogin.css">
+
+    <!-- profilemenu -->
+    <link rel="stylesheet" href="assets/css/profilemenu.css">
+    <link rel="stylesheet" href="assets/css/styleindex.css" />
+
+    <!-- profile -->
+    <link rel="stylesheet" href="assets/css/styleprofile.css" />
+
+    <!-- movie cards -->
+    <link rel="stylesheet" href="assets/css/moviecards.css" />
+
+    <!-- cart -->
+    <link rel="stylesheet" href="assets/css/stylecart.css" />
+    
+</head>
+
+<body>
+    <header>
+        <div class="menubar">
+            <button id="btn" type="button" onclick="popItUp()">
+                <img height=128px src="assets/imgs/profile.svg"></a>
+            </button>
+            <div class="menus" id="popup1">
+                <div class="login-box">
+                    <div class="login-form">
+                        <form name="loginform" method="post">
+                            <label for="fname">Username</label>
+                            <input id="usrnm" type="text" name="Username" placeholder="enter Username" required>
+                            <br />
+                            <br />
+                            <label for="fname">password</label>
+                            <input id="pswrd" id="pass-eye" type="password" name="Password" placeholder="enter Password"
+                                required>
+                            <img id="eye-icon" onclick="eye()" src="assets/imgs/open.png">
+                            <br />
+                            <br />
+                            <input type="button" value="login" onclick="logIn(this.form)">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="menus" id="popup2">
+                <div class="profile-box">
+                    <h1 id="username"></h1>
+                    <div class="profile-pic">
+                        <img id="pro-pic" height="256px" src="" />
+                    </div>
+                    <div class="profile-data">
+                        <label>UserId:</label>
+                        <output id="userid"></output>
+                        <br />
+                        <label>Age:</label>
+                        <output id="age"></output>
+                        <br />
+                        <label>mobile no.:</label>
+                        <output id="mob_no"></output>
+                        <br />
+                        <label>email</label>
+                        <output id="email"></output>
+                        <br />
+                        <input type="button" value="logout" onclick="logOut();">
+                    </div>
+                </div>
+            </div>
+            <img height="256px" src="assets/imgs/logo_png.png">
+            <button id="btn" type="button" onclick="openCart()">
+                <img height=128px src="assets/imgs/cart.svg"></a>
+            </button>
+            <div class="menus" id="popup3">
+                    <div class="cart-box">
+                        <label>Sub Total</label>
+                        <h1 id="sub-total"></h1>
+                    </div>
+                </div>
+    
+        </div>
+    </header>
+
+    <div class="moviecards_desk">
+        <table id="cards-table" align="center">
+            <tr>
+                <th style="color:silver; font-size:32px;">Silver</th>
+                <th style="color:gold; font-size:32px;">Gold</th>
+                <th style="color:paleturquoise; font-size:32px;">Platinum</th>
+                <th style="color:grey; font-size:32px;">Diamond</th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="#open_card0" id="card0" class="moviecard">
+                        <img onclick="doit(0);" class="card_img" src="assets/imgs/movie_icons/annihilation.jpg" />
+                    </a>
+                </td>
+                <td>
+                    <a href="#open_card1" id="card1" class="moviecard">
+                        <img onclick="doit(1);" class="card_img" src="assets/imgs/movie_icons/arrival.jpg" />
+                    </a>
+                </td>
+                <td>
+                    <a href="#open_card2" id="card2" class="moviecard">
+                        <img onclick="doit(2);" class="card_img" src="assets/imgs/movie_icons/avengers.jpg" />
+                    </a>
+                </td>
+                <td>
+                    <a href="#open_card3" id="card3" class="moviecard">
+                        <img onclick="doit(3);" class="card_img" src="assets/imgs/movie_icons/ex_machina.jpg" />
+                    </a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="#open_card4" id="card4" class="moviecard">
+                        <img onclick="doit(4);" class="card_img" src="assets/imgs/movie_icons/gravity.jpg" />
+                    </a>
+                </td>
+                <td>
+                    <a href="#open_card5" id="card5" class="moviecard">
+                        <img onclick="doit(5);" class="card_img" src="assets/imgs/movie_icons/inception.jpg" />
+                    </a>
+                </td>
+                <td>
+                    <a href="#open_card6" id="card6" class="moviecard">
+                        <img onclick="doit(6);" class="card_img" src="assets/imgs/movie_icons/interstellar.jpg" />
+                    </a>
+                </td>
+                <td>
+                    <a href="#open_card7" id="card7" class="moviecard">
+                        <img onclick="doit(7);" class="card_img" src="assets/imgs/movie_icons/martian.jpg" />
+                    </a>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="open_card" id="open_card0">
+        <div class="card_details">
+            <span onclick="doit(0);" class="close">&times;</span>
+            <h1 id="details_text0"></h1>
+            <h2 id="details_text00"></h2>
+            <button onclick="addToCart(0)"; class="add2cart" type="button" onclick="addToCart();">
+                <img height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+    <div class="open_card" id="open_card1">
+        <div class="card_details">
+            <span onclick="doit(1);" class="close">&times;</span>
+            <h1 id="details_text1"></h1>
+            <h2 id="details_text01"></h2>
+            <button onclick="addToCart(1);" class="add2cart" type="button" onclick="addToCart();">
+                <img  height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+    <div class="open_card" id="open_card2">
+        <div class="card_details">
+            <span onclick="doit(2);" class="close">&times;</span>
+            <h1 id="details_text2"></h1>
+            <h2 id="details_text02"></h2>
+            <button onclick="addToCart(2);" class="add2cart" type="button" onclick="addToCart();">
+                <img  height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+    <div class="open_card" id="open_card3">
+        <div class="card_details">
+            <span onclick="doit(3);" class="close">&times;</span>
+            <h1 id="details_text3"></h1>
+            <h2 id="details_text03"></h2>
+            <button onclick="addToCart(3);" class="add2cart" type="button" onclick="addToCart();">
+                <img  height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+    <div class="open_card" id="open_card4">
+        <div class="card_details">
+            <span onclick="doit(4);" class="close">&times;</span>
+            <h1 id="details_text4"></h1>
+            <h2 id="details_text04"></h2>
+            <button onclick="addToCart(4);" class="add2cart" type="button" onclick="addToCart();">
+                <img  height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+    <div class="open_card" id="open_card5">
+        <div class="card_details">
+            <span onclick="doit(5);" class="close">&times;</span>
+            <h1 id="details_text5"></h1>
+            <h2 id="details_text05"></h2>
+            <button onclick="addToCart(5);" class="add2cart" type="button" onclick="addToCart();">
+                <img  height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+    <div class="open_card" id="open_card6">
+        <div class="card_details">
+            <span onclick="doit(6);" class="close">&times;</span>
+            <h1 id="details_text6"></h1>
+            <h2 id="details_text06"></h2>
+            <button onclick="addToCart(6);" class="add2cart" type="button" onclick="addToCart();">
+                <img  height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+    <div class="open_card" id="open_card7">
+        <div class="card_details">
+            <span onclick="doit(7);" class="close">&times;</span>
+            <h1 id="details_text7"></h1>
+            <h2 id="details_text07"></h2>
+            <button onclick="addToCart(7);" class="add2cart" type="button" onclick="addToCart();">
+                <img  height="64px" src="assets/imgs/add2cart.svg">
+            </button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/login.js"></script>
+    <script type="text/javascript" src="assets/js/profilemenu.js"></script>
+    <script type="text/javascript" src="assets/js/logout.js"></script>
+    <script type="text/javascript" src="assets/js/moviecards.js"></script>
+    <script type="text/javascript" src="assets/js/Cart.js"></script>
+
+</body>
+
+</html>
