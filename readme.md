@@ -1,2 +1,2 @@
-# a serverless and insequare login ang buy web-platform
+# a serverless and insequare login and buy web-platform
 
